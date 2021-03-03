@@ -3,7 +3,7 @@ import TranslatePage from "./components/translation/TranslatePage.jsx";
 import HomePage from "./components/home/HomePage.jsx";
 import ProfilePage from "./components/profile/ProfilePage.jsx";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Switch>
@@ -19,6 +19,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
