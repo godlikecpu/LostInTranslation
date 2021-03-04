@@ -6,7 +6,7 @@ const HomePage = () => {
     <>
       <div className="center">
         <h1>Welcome</h1>
-        <InputField placeholder="Input your name"></InputField>
+        <InputField submitButton={true} placeholder="Input your name"></InputField>
       </div>
     </>
   );

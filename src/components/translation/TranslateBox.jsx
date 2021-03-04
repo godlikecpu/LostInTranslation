@@ -6,6 +6,21 @@ function TranslateBox({ textToTranslate }) {
   const isLetter = (str) => {
     return str.length === 1 && str.match(/[a-z]/i);
   };
+  const saveTranslation = () => {
+    let savedTranslations = JSON.parse(localStorage.getItem("savedTranslations"));
+    if(savedTranslations){
+      if(savedTranslations.length === 10) {
+        savedTranslations.pop();
+      }
+      savedTranslations.push(textToTranslate);
+      localStorage.setItem("savedTranslations", JSON.stringify(savedTranslations));
+    } else {
+      let array = [];
+      array.push(textToTranslate);
+      localStorage.setItem("savedTranslations", JSON.stringify(array));
+    }
+  };
+
   return (
     <>
       <div
@@ -27,6 +42,7 @@ function TranslateBox({ textToTranslate }) {
           }
         })}
       </div>
+      <button onClick={saveTranslation} type="button">Save Translation</button>
     </>
   );
 }

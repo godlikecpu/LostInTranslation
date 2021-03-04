@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const InputField = ({ placeholder, setTextToTranslate }) => {
+const InputField = ({ placeholder, setTextToTranslate, submitButton }) => {
   const [text, setText] = useState("");
   const history = useHistory();
 
@@ -17,14 +17,15 @@ const InputField = ({ placeholder, setTextToTranslate }) => {
     localStorage.setItem("username", text);
     history.push("/translate");
   };
+
   return (
     <>
       <label>
         <input value={text} placeholder={placeholder} onChange={handleChange} />
       </label>
-      <button type="button" onClick={handleSubmit}>
+      { submitButton && <button type="button" onClick={handleSubmit}>
         Submit
-      </button>
+      </button>}
     </>
   );
 };
