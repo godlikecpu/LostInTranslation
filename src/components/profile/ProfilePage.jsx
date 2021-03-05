@@ -22,7 +22,7 @@ function ProfilePage() {
     <>
       <div className="center">
         <h1>Profile</h1>
-        <h3>Translatations:</h3>
+        <h3>Translations:</h3>
         {savedTranslations &&
           savedTranslations.map((savedTranslation, id) => {
             return (
