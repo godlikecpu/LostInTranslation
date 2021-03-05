@@ -1,19 +1,23 @@
 import "../../globalstyle.css";
 import Sign from "./Sign";
-import UnsupportedSign from "./UnsupportedSign";
 function TranslateBox({ textToTranslate }) {
   const lowerCaseText = textToTranslate.toLowerCase();
   const isLetter = (str) => {
     return str.length === 1 && str.match(/[a-z]/i);
   };
   const saveTranslation = () => {
-    let savedTranslations = JSON.parse(localStorage.getItem("savedTranslations"));
-    if(savedTranslations){
-      if(savedTranslations.length === 10) {
+    let savedTranslations = JSON.parse(
+      localStorage.getItem("savedTranslations")
+    );
+    if (savedTranslations) {
+      if (savedTranslations.length === 10) {
         savedTranslations.pop();
       }
       savedTranslations.push(textToTranslate);
-      localStorage.setItem("savedTranslations", JSON.stringify(savedTranslations));
+      localStorage.setItem(
+        "savedTranslations",
+        JSON.stringify(savedTranslations)
+      );
     } else {
       let array = [];
       array.push(textToTranslate);
@@ -25,8 +29,7 @@ function TranslateBox({ textToTranslate }) {
     <>
       <div
         style={{
-          display: "flex",
-          flexWrap: "wrap",
+          display: "inline-block",
           width: 500,
           height: 300,
           border: "1px solid rgba(0, 0, 0, 0.2)",
@@ -35,14 +38,14 @@ function TranslateBox({ textToTranslate }) {
         }}
       >
         {Array.from(lowerCaseText).map((letter, idx) => {
-          if (isLetter(letter)) {
+          if (isLetter(letter) || letter === " ") {
             return <Sign key={idx} letter={letter}></Sign>;
-          } else {
-            return <UnsupportedSign letter={letter}></UnsupportedSign>;
           }
         })}
       </div>
-      <button onClick={saveTranslation} type="button">Save Translation</button>
+      <button onClick={saveTranslation} type="button">
+        Save Translation
+      </button>
     </>
   );
 }

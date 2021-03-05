@@ -11,11 +11,15 @@ const images = importAll(
 const Sign = ({ letter }) => {
   return (
     <>
-      <img
-        style={{ width: 50, height: 50 }}
-        src={images[`${letter}.png`]["default"]}
-        alt={letter}
-      />
+      {letter === " " ? (
+        <span style={{ letterSpacing: 50 }}>{letter}</span>
+      ) : (
+        <img
+          style={{ width: 50, height: 50 }}
+          src={images[`${letter}.png`].default}
+          alt={letter}
+        />
+      )}
     </>
   );
 };

@@ -21,11 +21,18 @@ const InputField = ({ placeholder, setTextToTranslate, submitButton }) => {
   return (
     <>
       <label>
-        <input value={text} placeholder={placeholder} onChange={handleChange} />
+        <input
+          value={text}
+          placeholder={placeholder}
+          onChange={handleChange}
+          maxLength={50}
+        />
       </label>
-      { submitButton && <button type="button" onClick={handleSubmit}>
-        Submit
-      </button>}
+      {submitButton && (
+        <button type="button" onClick={handleSubmit}>
+          Submit
+        </button>
+      )}
     </>
   );
 };

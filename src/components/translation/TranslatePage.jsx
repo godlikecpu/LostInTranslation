@@ -20,7 +20,9 @@ function TranslatePage() {
         Hi {name}
         <InputField setTextToTranslate={setTextToTranslate}></InputField>
         <TranslateBox textToTranslate={textToTranslate}></TranslateBox>
-        <button onClick={goToProfile} type="button">Go to profile</button>
+        <button onClick={goToProfile} type="button">
+          Go to profile
+        </button>
       </div>
     </>
   );
