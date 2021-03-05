@@ -8,14 +8,14 @@ function importAll(r) {
 const images = importAll(
   require.context("../../signs", false, /\.(png|jpe?g|svg)$/)
 );
-const Sign = ({ letter }) => {
+const Sign = ({ letter, size }) => {
   return (
     <>
       {letter === " " ? (
-        <span style={{ letterSpacing: 50 }}>{letter}</span>
+        <span style={{ letterSpacing: size }}>{letter}</span>
       ) : (
         <img
-          style={{ width: 50, height: 50 }}
+          style={{ width: size, height: size }}
           src={images[`${letter}.png`].default}
           alt={letter}
         />

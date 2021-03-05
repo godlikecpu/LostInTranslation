@@ -1,10 +1,7 @@
 import "../../globalstyle.css";
-import Sign from "./Sign";
+import Translater from "./Translater";
+
 function TranslateBox({ textToTranslate }) {
-  const lowerCaseText = textToTranslate.toLowerCase();
-  const isLetter = (str) => {
-    return str.length === 1 && str.match(/[a-z]/i);
-  };
   const saveTranslation = () => {
     let savedTranslations = JSON.parse(
       localStorage.getItem("savedTranslations")
@@ -32,18 +29,13 @@ function TranslateBox({ textToTranslate }) {
           display: "inline-block",
           width: 500,
           height: 300,
-          border: "1px solid rgba(0, 0, 0, 0.2)",
-          borderRadius: 20,
           margin: 20,
         }}
+        className="border"
       >
-        {Array.from(lowerCaseText).map((letter, idx) => {
-          if (isLetter(letter) || letter === " ") {
-            return <Sign key={idx} letter={letter}></Sign>;
-          }
-        })}
+        <Translater textToTranslate={textToTranslate} size={50}></Translater>
       </div>
-      <button onClick={saveTranslation} type="button">
+      <button className="btn" onClick={saveTranslation} type="button">
         Save Translation
       </button>
     </>

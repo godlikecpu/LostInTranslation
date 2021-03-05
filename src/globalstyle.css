@@ -4,3 +4,29 @@
   align-items: center;
   justify-content: center;
 }
+
+h3 {
+  margin-top: -15px;
+}
+.btn {
+  width: 200px;
+  height: 30px;
+  font-size: 20;
+  background-color: #b0c4de;
+  border-radius: 12px;
+  border: 0;
+  margin: 5px;
+}
+
+.btn:hover {
+  background-color: #a5a5a5;
+}
+
+.border {
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}

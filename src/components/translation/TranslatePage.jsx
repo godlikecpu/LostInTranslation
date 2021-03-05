@@ -17,10 +17,12 @@ function TranslatePage() {
     <>
       <div className="center">
         <h1>Translate</h1>
-        Hi {name}
+        <p>
+          Hi {name}, input up to 50 characters from A-Z and see the translation
+        </p>
         <InputField setTextToTranslate={setTextToTranslate}></InputField>
         <TranslateBox textToTranslate={textToTranslate}></TranslateBox>
-        <button onClick={goToProfile} type="button">
+        <button onClick={goToProfile} className="btn" type="button">
           Go to profile
         </button>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "../globalstyle.css";
 
 const InputField = ({ placeholder, setTextToTranslate, submitButton }) => {
   const [text, setText] = useState("");
@@ -22,14 +23,22 @@ const InputField = ({ placeholder, setTextToTranslate, submitButton }) => {
     <>
       <label>
         <input
+          type="text"
           value={text}
           placeholder={placeholder}
           onChange={handleChange}
           maxLength={50}
+          style={{
+            textAlign: "center",
+            width: 500,
+            height: 35,
+            fontSize: 20,
+          }}
+          className="border"
         />
       </label>
       {submitButton && (
-        <button type="button" onClick={handleSubmit}>
+        <button type="button" className="btn" onClick={handleSubmit}>
           Submit
         </button>
       )}
