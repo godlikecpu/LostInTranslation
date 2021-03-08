@@ -1,6 +1,6 @@
-# Lost In Translation
+# Lost In Translation :notebook_with_decorative_cover:
 
-## Lost in translation is a web application based on React.js where the user can translate English words and short sentences to American sign language.
+Lost in translation is a web application based on React.js where the user can translate English words and short sentences to American sign language.
 
 ## Features:
 
