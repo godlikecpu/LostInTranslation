@@ -19,8 +19,9 @@ Hunor Vadasz-Perhat
 
 # Getting Started with Lost in translation app
 
-After cloning the repository run `npm install` to install the necessary dependencies. 
-Afterwards application can run by using `npm start` command from root folder of the project.
+* After cloning the repository run `npm install` to install the necessary dependencies. 
+
+* Afterwards application can run by using `npm start` command from root folder of the project.
 
 
 
