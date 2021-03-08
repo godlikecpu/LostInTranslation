@@ -4,6 +4,8 @@ import InputField from "../InputField";
 import TranslateBox from "./TranslateBox";
 import "../../globalstyle.css";
 
+// Translate page component
+
 function TranslatePage() {
   const [textToTranslate, setTextToTranslate] = useState("");
   const name = localStorage.getItem("username");

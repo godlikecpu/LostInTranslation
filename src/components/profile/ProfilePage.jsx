@@ -4,17 +4,24 @@ import Translater from "../translation/Translater";
 import "../../globalstyle.css";
 
 function ProfilePage() {
+  //Gets initial state from localStorage
   const [savedTranslations, setTranslations] = useState(
     JSON.parse(localStorage.getItem("savedTranslations"))
   );
   const history = useHistory();
 
+  /**
+   * Removes the saved translations in state and in local storage
+   */
   const clearTranslations = () => {
     setTranslations([]);
     localStorage.removeItem("savedTranslations");
   };
 
-  const deleteLocalstorage = () => {
+  /**
+   * Clears localStorage of everything and redirects to homepage
+   */
+  const signOut = () => {
     localStorage.clear();
     history.push("/");
   };
@@ -37,7 +44,7 @@ function ProfilePage() {
                 key={id}
               >
                 <p>{savedTranslation}:</p>
-                <Translater textToTranslate={savedTranslation} size={20} />
+                <Translater textToTranslate={savedTranslation} size={30} />
               </div>
             );
           })}
@@ -45,7 +52,7 @@ function ProfilePage() {
           Clear translations
         </button>
 
-        <button onClick={deleteLocalstorage} type="button" className="btn">
+        <button onClick={signOut} type="button" className="btn">
           Logout
         </button>
       </div>

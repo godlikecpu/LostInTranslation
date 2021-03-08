@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../globalstyle.css";
 
+// Modular input field component
+
 const InputField = ({ placeholder, setTextToTranslate, submitButton }) => {
   const [text, setText] = useState("");
   const history = useHistory();

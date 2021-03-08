@@ -1,7 +1,13 @@
 import "../../globalstyle.css";
 import Translater from "./Translater";
 
+// Translate box component
+
 function TranslateBox({ textToTranslate }) {
+  /**
+   * Logic for saving translations. If there is nothing in localStorage a new array will be created and stored.
+   * LocalStorage only holds strings, so arrays have to be JSON stringified before saving and parsed before usage.
+   */
   const saveTranslation = () => {
     let savedTranslations = JSON.parse(
       localStorage.getItem("savedTranslations")
@@ -30,6 +36,7 @@ function TranslateBox({ textToTranslate }) {
           width: 500,
           height: 300,
           margin: 20,
+          caretColor: "transparent",
         }}
         className="border"
       >
